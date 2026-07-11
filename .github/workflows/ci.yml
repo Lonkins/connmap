@@ -45,6 +45,9 @@ jobs:
       - name: Build package
         run: uv build
 
+      - name: Docs build (strict)
+        run: uv run mkdocs build --strict
+
       - name: Secret scan (gitleaks)
         uses: gitleaks/gitleaks-action@v2
         env:
