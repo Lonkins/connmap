@@ -1,0 +1,22 @@
+{
+  "name": "MCP desktop assistant",
+  "mcpServers": {
+    "telegram": {
+      "command": "npx",
+      "args": ["-y", "@acme/telegram-mcp"],
+      "description": "Telegram bot bridge.",
+      "tools": ["read_messages", "send_message"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/me"],
+      "tools": ["read_file", "write_file", "list_directory"]
+    },
+    "shell": {
+      "command": "uvx",
+      "args": ["mcp-server-shell"],
+      "connmap": { "kind": "shell" },
+      "tools": ["run_command"]
+    }
+  }
+}

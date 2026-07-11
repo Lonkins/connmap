@@ -1,0 +1,32 @@
+{
+  "openclaw_version": "1.0",
+  "assistant": {
+    "name": "Kai (personal assistant)"
+  },
+  "connectors": [
+    {
+      "id": "whatsapp",
+      "type": "whatsapp",
+      "label": "WhatsApp",
+      "description": "Reads and replies to WhatsApp messages.",
+      "tools": ["receive_message", "send_message"]
+    },
+    {
+      "id": "files",
+      "type": "filesystem",
+      "label": "Home files",
+      "description": "Read and write files under the home directory.",
+      "tools": ["read_file", "write_file", "list_directory"]
+    },
+    {
+      "id": "http",
+      "type": "http",
+      "label": "Web fetch",
+      "description": "Fetches arbitrary URLs on the assistant's behalf.",
+      "tools": ["fetch"]
+    }
+  ],
+  "routing": {
+    "mode": "auto"
+  }
+}
