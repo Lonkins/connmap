@@ -70,9 +70,10 @@ uv run connmap --help
 # Analyze an OpenClaw config and print the report
 connmap analyze examples/openclaw-vulnerable.json
 
-# Emit every artifact
+# Emit every artifact (console report still prints unless --quiet)
 connmap analyze examples/openclaw-vulnerable.json \
-  --format cli --json out/report.json --sarif out/report.sarif --html out/graph.html
+  --json out/report.json --sarif out/report.sarif \
+  --html out/graph.html --policy out/policy.json
 
 # Generate a least-privilege policy that severs the dangerous flows
 connmap policy examples/openclaw-vulnerable.json --out out/policy.json
