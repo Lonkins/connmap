@@ -65,3 +65,18 @@ round-trip test against a synthetic fixture.
 A rule is a function over the graph that yields `Finding`s. Add it to the
 engine, give every finding a concrete attacker narrative, and cover it
 with a fixture that fires and one that stays clean.
+
+## Releasing
+
+Releases are cut from tags and published to PyPI via **Trusted Publishing**
+(OpenID Connect — no stored tokens).
+
+1. Update `CHANGELOG.md` and bump `version` in `pyproject.toml`.
+2. One-time PyPI setup (maintainer, free): create the `connmap` project's
+   [trusted publisher](https://docs.pypi.org/trusted-publishers/adding-a-publisher/)
+   pointing at this repo, workflow `release.yml`, environment `pypi`. Then set
+   the repository variable `PUBLISH_TO_PYPI=true`.
+3. Tag and push: `git tag -a v0.1.0 -m "v0.1.0" && git push origin v0.1.0`.
+   The `release` workflow builds, validates, and (once step 2 is done)
+   publishes. Until then the publish job is skipped, so tagging is always safe.
+

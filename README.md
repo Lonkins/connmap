@@ -3,6 +3,7 @@
 **Data-flow threat mapping for local AI-assistant connectors.**
 
 [![CI](https://github.com/Lonkins/connmap/actions/workflows/ci.yml/badge.svg)](https://github.com/Lonkins/connmap/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/connmap.svg)](https://pypi.org/project/connmap/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![Checked with mypy](https://img.shields.io/badge/mypy-strict-2a6db2.svg)](https://mypy-lang.org/)
