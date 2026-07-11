@@ -1,0 +1,15 @@
+connmap
+Copyright 2026 Tom Price
+
+This product includes software developed as part of the connmap project,
+licensed under the Apache License, Version 2.0.
+
+--------------------------------------------------------------------------------
+Third-party components bundled in this distribution:
+
+D3.js (v7.9.0)
+  Files: src/connmap/render/assets/d3.v7.min.js
+  Copyright 2010-2023 Mike Bostock
+  License: ISC (https://github.com/d3/d3/blob/main/LICENSE)
+  Bundled so that generated HTML reports are fully self-contained and open
+  offline with no external network calls.
