@@ -20,6 +20,7 @@ from connmap.importers import ImporterError, load_config
 from connmap.model.connector import Assistant
 from connmap.model.graph import build_graph
 from connmap.policy import generate_policy
+from connmap.render import render_html
 from connmap.report import dumps_json_report, dumps_sarif_report, render_console
 
 app = typer.Typer(
@@ -61,6 +62,10 @@ def analyze(
     sarif_out: Annotated[
         Path | None, typer.Option("--sarif", help="Write the SARIF report to PATH.")
     ] = None,
+    html_out: Annotated[
+        Path | None,
+        typer.Option("--html", help="Write the self-contained interactive HTML graph to PATH."),
+    ] = None,
     policy_out: Annotated[
         Path | None, typer.Option("--policy", help="Write the least-privilege policy to PATH.")
     ] = None,
@@ -81,6 +86,8 @@ def analyze(
         _write(json_out, dumps_json_report(graph, analysis, policy))
     if sarif_out is not None:
         _write(sarif_out, dumps_sarif_report(analysis, _config_uri(config)))
+    if html_out is not None:
+        _write(html_out, render_html(graph, analysis))
     if policy_out is not None:
         _write(policy_out, json.dumps(policy.to_dict(), indent=2))
 
